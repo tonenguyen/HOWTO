@@ -1,0 +1,35 @@
+
+
+https://en.wikipedia.org/wiki/Test_fixture#Software
+
+
+A software test fixture sets up a system for the software testing process by initializing it > satisfying any preconditions the system may have.
+
+
+[1] For example, the Ruby on Rails web framework uses YAML to initialize a database with known parameters before running a test.
+[2] This allows for tests to be repeatable, which is one of the key features of an effective test framework.[1]
+
+Setup
+Test fixtures can be set up three different ways: in-line, delegate, and implicit.
+
+In-line setup creates the test fixture in the same method as the rest of the test.  (individual setup)
+> While in-line setup is the simplest test fixture to create, it leads to duplication when multiple tests require the same initial data.
+
+Delegate setup places the test fixture in a separate standalone helper method that is accessed by multiple test methods.
+
+Implicit setup places the test fixture in a setup method which is used to set up multiple test methods. 
+> This differs from delegate setup in that the overall setup of multiple tests is in a single setup method 
+where the test fixture gets created rather than each test method having its own setup procedures and linking to an external test fixture.[3]
+
+Practices to avoid:
+
+It is considered bad practice when implicit test fixtures are too general, or 
+when a test method sets up a test fixture and does not use it during the test.
+ A more subtle issue is if the test methods ignore certain fields within the test fixture. A
+
+nother bad practice is a test setup that contains more steps than needed for the test; this is a problem seen in in-line setup.[3]
+
+A test case is considered "unsafe" when it modifies its fixture(s). 
+An unsafe test case can render subsequent tests useless by leaving the fixture in an unexpected state.
+ It also causes the order of tests to be important: a modified fixture must be reset if more tests are to be run after an unsafe test.[1]
+
