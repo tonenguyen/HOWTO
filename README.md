@@ -10,6 +10,10 @@ git fetch --prune to synchronize
 
 https://stackoverflow.com/questions/6373277/synchronizing-a-local-git-repository-with-a-remote-one
 
+To delete a github old repositories
+
+https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository
+
 ### Python PIP
 
 * pip freeze > requirements.txt 
