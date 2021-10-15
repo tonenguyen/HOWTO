@@ -1,5 +1,31 @@
+Based on https://gist.github.com/xirixiz/b6b0c6f4917ce17a90e00f9b60566278
 
-UNDO COMMITS
+### SSH keypair setup for GitHub
+
+sh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Linux:
+* xclip -sel clip < ~/.ssh/id_rsa.pub
+MacOS:
+* pbcopy < ~/.ssh/id_rsa.pub
+
+Copy the public SSH key to GitHub:
+* Copy the contents of the to your SSH keys to your GitHub account settings (https://github.com/settings/keys).
+
+Test the SSH key:
+
+ssh -T git@github.com
+
+Change directory into the local clone of your repository (if you're not already there) and run:
+
+git remote set-url origin git@github.com:<username>/<your-repository>.git
+
+username:your git login
+your-repository: current clone repository name
+
+
+### UNDO COMMITS
+
 
 https://stackoverflow.com/questions/2845731/how-to-uncommit-my-last-commit-in-git
 
